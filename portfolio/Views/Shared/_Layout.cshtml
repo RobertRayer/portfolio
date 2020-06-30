@@ -34,12 +34,12 @@
                     <li class="nav-item
                         @(string.Equals(controller, "Home", StringComparison.OrdinalIgnoreCase) 
                             && string.Equals(action,"Contact", StringComparison.OrdinalIgnoreCase) ? "active" : "")">
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">Contact Me</a>
+                        <a class="nav-link" href="mailto:robertrayer@gmail.com">Contact Me</a>
                     </li>
                     <li class="nav-item
                         @(string.Equals(controller, "Home", StringComparison.OrdinalIgnoreCase) 
                             && string.Equals(action,"Source", StringComparison.OrdinalIgnoreCase) ? "active" : "")">
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Source">Source</a>
+                        <a class="nav-link" href="https://github.com/RobertRayer/portfolio">Source</a>
                     </li>
                 </ul>
             </div>
@@ -56,8 +56,6 @@
             <div>&copy; @DateTime.Now.Year - Robert Rayer - Built with ASP.NET Core 3.1</div> 
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
