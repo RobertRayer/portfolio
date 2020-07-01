@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/fontawesome/dist/css/all.min.css" />
     <link rel="stylesheet" href="~/css/site.bundle.min.css" />
 </head>
 <body>
@@ -24,22 +25,30 @@
                     <li class="nav-item
                         @(string.Equals(controller, "Home", StringComparison.OrdinalIgnoreCase)
                             && string.Equals(action,"Index", StringComparison.OrdinalIgnoreCase) ? "active" : "")">
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                            <i class="fa fa-home"></i> Home
+                        </a>
                     </li>
                     <li class="nav-item
                         @(string.Equals(controller, "Home", StringComparison.OrdinalIgnoreCase)
                             && string.Equals(action,"Resume", StringComparison.OrdinalIgnoreCase) ? "active" : "")">
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Resume">Resume</a>
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Resume">
+                        <i class="fa fa-file"></i> Resume</a>
                     </li>
-                    <li class="nav-item
-                        @(string.Equals(controller, "Home", StringComparison.OrdinalIgnoreCase)
-                            && string.Equals(action,"Contact", StringComparison.OrdinalIgnoreCase) ? "active" : "")">
-                        <a class="nav-link" href="mailto:robertrayer@gmail.com">Contact Me</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mailto:robertrayer@gmail.com">
+                            <i class="fa fa-envelope"></i> Contact Me
+                        </a>
                     </li>
-                    <li class="nav-item
-                        @(string.Equals(controller, "Home", StringComparison.OrdinalIgnoreCase)
-                            && string.Equals(action,"Source", StringComparison.OrdinalIgnoreCase) ? "active" : "")">
-                        <a class="nav-link" href="https://github.com/RobertRayer/portfolio">Source</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/RobertRayer/portfolio" target="_blank">
+                            <i class="fab fa-github"></i> Source
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.linkedin.com/in/robert-rayer" target="_blank">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
                     </li>
                 </ul>
             </div>
