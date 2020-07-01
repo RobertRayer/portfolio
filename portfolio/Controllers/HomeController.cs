@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using portfolio.Models;
+using Portfolio.Models;
 
-namespace portfolio.Controllers
+namespace Portfolio.Controllers
 {
     public class HomeController : Controller
     {
@@ -18,22 +14,14 @@ namespace portfolio.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
+        [HttpGet]
+        public IActionResult Index() => View();
 
         [Route("Resume")]
-        public IActionResult Resume()
-        {
-            return View();
-        }
+        [HttpGet]
+        public IActionResult Resume() => View();
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        public IActionResult Error() => View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }

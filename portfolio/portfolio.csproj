@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Portfolio</AssemblyName>
+    <RootNamespace>Portfolio</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
