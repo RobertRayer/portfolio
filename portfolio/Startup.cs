@@ -1,5 +1,7 @@
+using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -19,6 +21,14 @@ namespace Portfolio
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddResponseCaching();
+            services.AddResponseCompression(options =>
+            {
+                options.Providers.Add<GzipCompressionProvider>();
+                options.MimeTypes =
+                    ResponseCompressionDefaults.MimeTypes.Concat(
+                        new[] { "image/svg+xml", "text/css" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,6 +46,8 @@ namespace Portfolio
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseResponseCompression();
+            app.UseResponseCaching();
 
             app.UseRouting();
 

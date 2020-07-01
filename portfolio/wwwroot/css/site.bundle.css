@@ -1,11 +1,4 @@
 /*——————————————
-Global
-———————————————*/
-
-body {
-    font-family: helvetica;
-}
-/*——————————————
 TimeLine CSS
 ———————————————*/
 /* Base */
@@ -190,7 +183,6 @@ a.portfolio-link {
 for details on configuring this project to bundle and minify static web assets. */
 
 .card-image{
-    height: 150px;
     width: 150px;
 }
 
@@ -252,8 +244,10 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    color: #343a40;
+    font-family: helvetica;
 }
 .footer {
   position: absolute;
