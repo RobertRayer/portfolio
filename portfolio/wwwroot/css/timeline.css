@@ -117,16 +117,10 @@ Responsive Stuff
 @media (max-width: 768px) {
     .timeline .event::before {
         left: 0.5px;
-        top: 38px;
+        top: 20px;
         min-width: 0;
         font-size: 13px;
     }
-
-   /* .timeline .event:nth-child(1)::before,
-    .timeline .event:nth-child(3)::before,
-    .timeline .event:nth-child(5)::before {
-        top: 38px;
-    }*/
 
     .timeline h3 {
         font-size: 16px;
@@ -134,6 +128,53 @@ Responsive Stuff
 
     .timeline p {
         padding-top: 20px;
+    }
+}
+
+@media (max-width: 414px) {
+    .timeline .event::before {
+        left: 0.5px;
+        top: 38px;
+        min-width: 0;
+        font-size: 13px;
+    }
+
+    .timeline h3 {
+        font-size: 16px;
+    }
+
+    .timeline p {
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 375px) {
+    .timeline .event::before {
+        left: 0.5px;
+        top: 38px;
+        min-width: 0;
+        font-size: 13px;
+    }
+
+    .timeline h3 {
+        font-size: 16px;
+    }
+
+    .timeline p {
+        padding-top: 30px;
+    }
+
+     .timeline .event:nth-child(1)::before,
+    .timeline .event:nth-child(3)::before {
+        top: 54px;
+    }
+}
+
+@media (max-width: 360px) {
+    .timeline .event:nth-child(1)::before,
+    .timeline .event:nth-child(3)::before,
+    .timeline .event:nth-child(4)::before {
+        top: 54px;
     }
 }
 /*——————————————
