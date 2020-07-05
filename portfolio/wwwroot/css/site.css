@@ -74,3 +74,8 @@ body {
   width: 100%;
   white-space: nowrap;
 }
+
+/* profile image */
+.profile-image {
+    width: 150px;
+}

@@ -25,9 +25,7 @@ namespace Portfolio
             services.AddResponseCompression(options =>
             {
                 options.Providers.Add<GzipCompressionProvider>();
-                options.MimeTypes =
-                    ResponseCompressionDefaults.MimeTypes.Concat(
-                        new[] { "image/svg+xml", "text/css" });
+                options.EnableForHttps = true;
             });
         }
 
