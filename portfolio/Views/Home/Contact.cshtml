@@ -11,24 +11,28 @@
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div>
         @Html.LabelFor(x => x.FromAddress)
+        @Html.ValidationMessageFor(x => x.FromAddress)
     </div>
     <div>
         @Html.EditorFor(x => x.FromAddress, new { htmlAttributes = new { @class = "contact-form-editor" } })
     </div>
     <div>
         @Html.LabelFor(x => x.FromName)
+        @Html.ValidationMessageFor(x => x.FromName)
     </div>
     <div>
         @Html.EditorFor(x => x.FromName, new { htmlAttributes = new { @class = "contact-form-editor" } })
     </div>
     <div>
         @Html.LabelFor(x => x.Subject)
+        @Html.ValidationMessageFor(x => x.Subject)
     </div>
     <div>
         @Html.EditorFor(x => x.Subject, new { htmlAttributes = new { @class = "contact-form-editor" } })
     </div>
     <div>
         @Html.LabelFor(x => x.Body)
+        @Html.ValidationMessageFor(x => x.Body)
     </div>
     <div>
         @Html.EditorFor(x => x.Body, new { htmlAttributes = new { @class = "contact-form-editor" } })

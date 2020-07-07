@@ -192,6 +192,10 @@ a.navbar-brand {
   word-break: break-all;
 }
 
+.field-validation-error {
+    color: Red;
+}
+
 /* Provide sufficient contrast against white background */
 a {
   color: #0366d6;
