@@ -79,3 +79,12 @@ body {
 .profile-image {
     width: 150px;
 }
+
+.contact-form-editor {
+    width: 500px;
+}
+@media (max-width: 945px) {
+    .contact-form-editor {
+        width: 300px;
+    }
+}

@@ -1,10 +1,10 @@
-using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Portfolio.Services;
 
 namespace Portfolio
 {
@@ -27,6 +27,7 @@ namespace Portfolio
                 options.Providers.Add<GzipCompressionProvider>();
                 options.EnableForHttps = true;
             });
+            services.AddTransient(typeof(IEmailService), typeof(EmailService));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,7 +40,6 @@ namespace Portfolio
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
