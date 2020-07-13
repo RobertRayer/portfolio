@@ -34,7 +34,8 @@
                         @(string.Equals(controller, "Home", StringComparison.OrdinalIgnoreCase)
                             && string.Equals(action,"Resume", StringComparison.OrdinalIgnoreCase) ? "active" : "")">
                         <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Resume">
-                        <i class="fa fa-file"></i> Resume</a>
+                            <i class="fa fa-file"></i> Resume
+                        </a>
                     </li>
                     <li class="nav-item
                                 @(string.Equals(controller, "Home", StringComparison.OrdinalIgnoreCase)
@@ -51,6 +52,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="https://www.linkedin.com/in/robert-rayer" target="_blank" rel="noreferrer">
                             <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://robertrayer-portfolio-blazor.azurewebsites.net/">
+                            <i class="fa fa-code-branch"></i> View in Blazor
                         </a>
                     </li>
                 </ul>
