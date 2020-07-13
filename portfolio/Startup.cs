@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Portfolio.Services;
+using Portfolio.Services.Email.Service;
 
 namespace Portfolio
 {

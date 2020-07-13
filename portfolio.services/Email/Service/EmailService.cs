@@ -2,9 +2,9 @@
 using MailKit.Net.Smtp;
 using Microsoft.Extensions.Configuration;
 using MimeKit;
-using Portfolio.Models;
+using Portfolio.Services.Email.Models;
 
-namespace Portfolio.Services
+namespace Portfolio.Services.Email.Service
 {
     public class EmailService : IEmailService
     {
@@ -16,7 +16,7 @@ namespace Portfolio.Services
         private EmailOptions EmailOptions { get; set; }
         private IConfiguration Configuration { get; }
 
-        public async Task SendAsync(Email email)
+        public async Task SendAsync(EmailMessage email)
         {
             if (EmailOptions == null)
                 InitializeOptions();

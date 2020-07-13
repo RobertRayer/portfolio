@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace Portfolio.Models
+namespace Portfolio.Services.Email.Models
 {
-    public class Email
+    public class EmailMessage
     {
         public IList<EmailAddress> From { get; set; } = new List<EmailAddress>();
         public IList<EmailAddress> To { get; set; } = new List<EmailAddress>();

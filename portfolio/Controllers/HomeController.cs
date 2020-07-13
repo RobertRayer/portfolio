@@ -5,7 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Portfolio.Models;
-using Portfolio.Services;
+using Portfolio.Services.Email.Models;
+using Portfolio.Services.Email.Service;
 
 namespace Portfolio.Controllers
 {
@@ -43,7 +44,7 @@ namespace Portfolio.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Contact(ContactViewModel model)
         {
-            var email = new Email();
+            var email = new EmailMessage();
             var fromAddress = new EmailAddress(model.FromAddress) { Name = model.FromName };
             var toAddress = new EmailAddress(Configuration.GetValue<string>("EmailAddress"));
             email.From.Add(toAddress);

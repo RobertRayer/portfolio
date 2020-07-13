@@ -1,4 +1,4 @@
-﻿namespace Portfolio.Models
+﻿namespace Portfolio.Services.Email.Models
 {
     public class EmailAddress
     {

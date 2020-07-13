@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using MimeKit;
-using Portfolio.Models;
+using Portfolio.Services.Email.Models;
 
-namespace Portfolio.Services
+namespace Portfolio.Services.Email.Service
 {
     public static class EmailExtensions
     {
