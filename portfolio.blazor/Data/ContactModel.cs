@@ -6,20 +6,20 @@ namespace Portfolio.Blazor.Data
     public class ContactModel
     {
         [DisplayName("Email")]
-        [EmailAddress]
-        [Required]
+        [EmailAddress(ErrorMessage = "Please enter a valid email address")]
+        [Required(ErrorMessage ="Email is required")]
         public string FromAddress { get; set; }
         [DisplayName("Name")]
         [MaxLength(100)]
-        [Required]
+        [Required(ErrorMessage = "Name is required")]
         public string FromName { get; set; }
         [DisplayName("Subject")]
         [MaxLength(50)]
-        [Required]
+        [Required(ErrorMessage = "Subject is required")]
         public string Subject { get; set; }
         [DisplayName("Body")]
         [MaxLength(500)]
-        [Required]
+        [Required(ErrorMessage = "Body is required")]
         [DataType(DataType.MultilineText)]
         public string Body { get; set; }
     }

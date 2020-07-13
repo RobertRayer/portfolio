@@ -12,28 +12,28 @@
 <EditForm Model="@contactModel" OnValidSubmit="SendEmailAsync">
     <DataAnnotationsValidator />
     <div>
-        <label>Email:</label>
+        <Label For=@(() => contactModel.FromAddress) />
         <ValidationMessage For="@(() => contactModel.FromAddress)" />
     </div>
     <div class="pb-2">
         <InputText Class="contact-form-editor" @bind-Value="contactModel.FromAddress" />
     </div>
     <div>
-        <label>Name:</label>
+        <Label For=@(() => contactModel.FromName) />
         <ValidationMessage For="@(() => contactModel.FromName)" />
     </div>
     <div class="pb-2">
         <InputText Class="contact-form-editor" @bind-Value="contactModel.FromName" />
     </div>
     <div>
-        <label>Subject:</label>
+        <Label For=@(() => contactModel.Subject) />
         <ValidationMessage For="@(() => contactModel.Subject)" />
     </div>
     <div class="pb-2">
         <InputText Class="contact-form-editor" @bind-Value="contactModel.Subject" />
     </div>
     <div>
-        <label>Body:</label>
+        <Label For=@(() => contactModel.Body) />
         <ValidationMessage For="@(() => contactModel.Body)" />
     </div>
     <div class="pb-2">
