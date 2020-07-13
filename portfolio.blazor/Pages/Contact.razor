@@ -1,0 +1,65 @@
+﻿@using Portfolio.Services.Email.Models
+@using Microsoft.Extensions.Configuration 
+
+@inject Portfolio.Services.Email.Service.EmailService EmailService
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration
+@inject NavigationManager NavManager
+
+@page "/contact"
+
+<h1>Contact Me</h1>
+<hr />
+<EditForm Model="@contactModel" OnValidSubmit="SendEmailAsync">
+    <DataAnnotationsValidator />
+    <div>
+        <label>Email:</label>
+        <ValidationMessage For="@(() => contactModel.FromAddress)" />
+    </div>
+    <div class="pb-2">
+        <InputText Class="contact-form-editor" @bind-Value="contactModel.FromAddress" />
+    </div>
+    <div>
+        <label>Name:</label>
+        <ValidationMessage For="@(() => contactModel.FromName)" />
+    </div>
+    <div class="pb-2">
+        <InputText Class="contact-form-editor" @bind-Value="contactModel.FromName" />
+    </div>
+    <div>
+        <label>Subject:</label>
+        <ValidationMessage For="@(() => contactModel.Subject)" />
+    </div>
+    <div class="pb-2">
+        <InputText Class="contact-form-editor" @bind-Value="contactModel.Subject" />
+    </div>
+    <div>
+        <label>Body:</label>
+        <ValidationMessage For="@(() => contactModel.Body)" />
+    </div>
+    <div class="pb-2">
+        <InputText Class="contact-form-editor" @bind-Value="contactModel.Body" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Send" class="btn btn-primary" />
+    </div>
+</EditForm>
+
+@code {
+    private Data.ContactModel contactModel = new Data.ContactModel();
+
+    private async Task SendEmailAsync()
+    {
+        var email = new EmailMessage();
+        var fromAddress = new EmailAddress(contactModel.FromAddress) { Name = contactModel.FromName };
+        var toAddress = new EmailAddress(Configuration.GetValue<string>("EmailAddress"));
+        email.From.Add(toAddress);
+        email.ReplyTo.Add(fromAddress);
+        email.To.Add(toAddress);
+        email.Subject = contactModel.Subject;
+        email.Body = $"{contactModel.FromName}{Environment.NewLine}{contactModel.FromAddress}{Environment.NewLine}{contactModel.Body}";
+
+        await EmailService.SendAsync(email);
+
+        NavManager.NavigateTo("/contactsuccess");
+    }
+}

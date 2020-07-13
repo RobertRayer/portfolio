@@ -1,0 +1,15 @@
+﻿@inherits LayoutComponentBase
+
+<div class="sidebar">
+    <NavMenu />
+</div>
+
+<div class="main">
+    <div class="content px-4">
+        @Body
+        <footer class="text-center">
+            <div>&copy; @DateTime.Now.Year - Robert Rayer</div>
+            <div>Built with Blazor hosted with Microsoft Azure</div>
+        </footer>
+    </div>
+</div>

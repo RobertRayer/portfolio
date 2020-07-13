@@ -32,3 +32,4 @@ msbuild.wrn
 .vs/
 
 portfolio/appsettings.Development.json
+portfolio.blazor/appsettings.Development.json
